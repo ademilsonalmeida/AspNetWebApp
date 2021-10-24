@@ -145,7 +145,7 @@
   <ItemGroup>
     <Compile Include="Configs\SwaggerConfig.cs" />
     <Compile Include="Configs\WebApiConfig.cs" />
-    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

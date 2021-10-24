@@ -5,11 +5,11 @@ using System.Web.Http;
 
 namespace AspNetWebApp.API.Controllers
 {
-    public class UserController : ApiController
+    public class UsersController : ApiController
     {
         [AllowAnonymous]
         [HttpGet]
-        [Route("api/user/info")]
+        [Route("api/users/info")]
         public IHttpActionResult Get()
         {
             return Ok("Now server time is: " + DateTime.Now.ToString());
@@ -17,7 +17,7 @@ namespace AspNetWebApp.API.Controllers
 
         [Authorize]
         [HttpGet]
-        [Route("api/user/authenticate")]
+        [Route("api/users/authenticate")]
         public IHttpActionResult GetForAuthenticate()
         {
             var identity = (ClaimsIdentity)User.Identity;
@@ -26,7 +26,7 @@ namespace AspNetWebApp.API.Controllers
 
         [Authorize(Roles = "admin")]
         [HttpGet]
-        [Route("api/user/authorize")]
+        [Route("api/users/authorize")]
         public IHttpActionResult GetForAdmin()
         {
             var identity = (ClaimsIdentity)User.Identity;
