@@ -8,6 +8,8 @@ namespace AspNetWebApp.API.Configs
     {
         public static void Register(HttpConfiguration config)
         {
+            #region Json configurations
+
             var formatters = GlobalConfiguration.Configuration.Formatters;
             var jsonFormatter = formatters.JsonFormatter;
             var settings = jsonFormatter.SerializerSettings;
@@ -16,6 +18,10 @@ namespace AspNetWebApp.API.Configs
             config.Formatters.Remove(config.Formatters.XmlFormatter);
             settings.Formatting = Formatting.Indented;
             settings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+
+            #endregion            
+
+            #region Routes configurations
 
             config.MapHttpAttributeRoutes();
 
@@ -27,6 +33,8 @@ namespace AspNetWebApp.API.Configs
                     id = RouteParameter.Optional
                 }
             );
+
+            #endregion
         }
     }
 }
